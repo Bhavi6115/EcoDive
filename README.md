@@ -18,4 +18,4 @@ EcoDive is a responsive environmental awareness website designed to inform and i
 
 ## 🌍 Live Site
 
-[Click to View Website](https://BhavikaVasule.github.io/ecodive/)
+[Click to View Website](https://bhavi6115.github.io/EcoDive/)
