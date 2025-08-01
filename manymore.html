@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More to Explore - EcoDive</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: url('earth-from-space.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(5px);
+    }
+
+    .more-explore {
+      padding: 60px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.88);
+      margin: 60px auto;
+      max-width: 1200px;
+      border-radius: 16px;
+    }
+
+    .more-explore h2 {
+      font-size: 2.8em;
+      margin-bottom: 30px;
+      color: #184d47;
+      font-style: italic;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #ffffffdd;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      font-size: 1.4em;
+      color: #114232;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1em;
+      color: #333;
+    }
+
+    a.card {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+       footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<a href="index.html" class="back-btn">← Back</a>
+
+<style>
+  .back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s;
+  }
+
+  .back-btn:hover {
+    background-color: #388E3C;
+  }
+</style>
+
+  <section class="more-explore">
+    <h2>Many More to Explore...</h2>
+    <div class="card-grid">
+      <a href="wetlands.html" class="card" target="_blank">
+      <h3> 🌾 Wetlands</h3>
+      <p>Vital for biodiversity, wetlands act as natural water filters and protect against flooding.</p>
+    </a>
+    <a href="urban.html" class="card" target="_blank">
+      <h3> 🏙️ Urban Ecosystem</h3>
+      <p>Human-managed lands providing food and fiber — sustainability is key to balance and resilience.</p>
+    </a>
+       <a href="ecoquiz.html" class="card" target="_blank">
+      <h3> 🧠 Eco Quiz</h3>
+      <p>Test your knowledge with fun quizzes on ecosystems and climate action.</p>
+    </a>
+    <a href="join.html" class="card" target="_blank">
+      <h3> 🤝 Join the Movement</h3>
+      <p>Support causes, join clean-ups, or start a campaign in your area.</p>
+    </a>
+       
+      
+        </div>
+  </section>
+  
+  <footer>
+    &copy; 2025 EcoDive | Dive into Nature’s Balance
+  </footer>
+
+</body>
+</html>

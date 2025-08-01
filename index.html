@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoDive – Dive into Nature's Balance</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>EcoDive🌍</h1>
+      <h2 class="tagline">Dive into Nature's Balance</h2>
+    </header>
+
+    <!-- Ecosystem Image Marquee -->
+    <div class="marquee-container">
+      <div class="marquee">
+        <img src="forest.jpg" alt="Forest" />
+        <img src="ocean.jpg" alt="Ocean" />
+        <img src="desert.jpg" alt="Desert" />
+        <img src="mountains.jpg" alt="Mountain" />
+        <img src="island.jpg" alt="Island" />
+        <img src="agriimg.jpg" alt="Agriculture" />
+        <img src="polar.jpg" alt="Polar" />
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-ecodive">
+      <h2>About EcoDive</h2>
+      <p>
+        EcoDive is your portal to explore Earth's diverse ecosystems — from towering mountains to icy polar zones.
+        Our mission is to educate, inspire, and encourage sustainability by showcasing the importance of each habitat and how it contributes to a balanced planet.
+      </p>
+    </section>
+
+    <!-- Ecosystems Section -->
+    <section>
+      <h2>Major Ecosystems</h2>
+      <ul>
+        <li>Forest Ecosystem</li>
+        <li>Ocean Ecosystem</li>
+        <li>Desert Ecosystem</li>
+        <li>Mountain Ecosystem</li>
+        <li>Island Ecosystem</li>
+        <li>Agricultural Ecosystem</li>
+        <li>Polar Ecosystem</li>
+        <li>Many more...</li>
+      </ul>
+    </section>
+
+    <section class="ecosystem-cards">
+      <h2 style="font-size: 2.5rem;">Explore Our Ecosystems</h2>
+      <div class="card-grid">
+        <a href="forest.html" class="card" target="_blank">
+          <img src="jungle.jpg" alt="Forest Ecosystem">
+          <h3>Forest</h3>
+          <p>Forests are home to 80% of terrestrial species, absorb carbon dioxide, and help regulate rainfall and erosion.</p>
+        </a>
+        <a href="ocean.html" class="card" target="_blank">
+          <img src="OecanIP.jpg" alt="Ocean Ecosystem">
+          <h3>Ocean</h3>
+          <p>Oceans cover 70% of Earth, regulate climate, support marine life, and produce over 50% of Earth’s oxygen.</p>
+        </a>
+        <a href="desert.html" class="card">
+          <img src="desrt.jpg" alt="Desert Ecosystem">
+          <h3>Desert</h3>
+          <p>Dry and resilient, deserts reflect solar radiation and are home to uniquely adapted species.</p>
+        </a>
+        <a href="mountain.html" class="card" target="_blank">
+          <img src="peaks.jpg" alt="Mountain Ecosystem">
+          <h3>Mountain</h3>
+          <p>Mountains supply water, host alpine species, and influence global climate patterns.</p>
+        </a>
+        <a href="island.html" class="card" target="_blank">
+          <img src="iSLeco.jpg" alt="Island Ecosystem">
+          <h3>Island</h3>
+          <p>Islands are biodiversity hubs but vulnerable to rising seas and ecological disruptions.</p>
+        </a>
+        <a href="agriculture.html" class="card" target="_blank">
+          <img src="agri.jpg" alt="Agricultural Ecosystem">
+          <h3>Agricultural</h3>
+          <p>Human-managed lands providing food and fiber — sustainability is key to balance and resilience.</p>
+        </a>
+        <a href="polar.html" class="card" target="_blank">
+          <img src="polar-ecosystem.jpg" alt="Polar Ecosystem">
+          <h3>Polar</h3>
+          <p>The Arctic and Antarctic regulate Earth's climate and are the most affected by global warming.</p>
+        </a>
+        <div class="card coming-soon">
+          <a href="manymore.html">
+            <h3>Many More to Explore...</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carbon Footprint Calculator -->
+    <section>
+      <h2>Carbon Footprint Calculator</h2>
+      <label for="electricity">Electricity Usage (kWh/month):</label>
+      <input type="number" id="electricity" placeholder="e.g., 300" /><br>
+
+      <label for="transport">Travel Distance (km/month):</label>
+      <input type="number" id="transport" placeholder="e.g., 100" /><br>
+
+      <button onclick="calculateCarbon()">Calculate</button>
+      <p id="result"></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+      <h2>Contact Us</h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" placeholder="Your Name" required /><br>
+        <label>Email:</label>
+        <input type="email" placeholder="Your Email" required /><br>
+        <label>Message:</label><br>
+        <textarea rows="4" placeholder="Your Message"></textarea><br>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 EcoDive. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function calculateCarbon() {
+      const electricity = parseFloat(document.getElementById("electricity").value) || 0;
+      const transport = parseFloat(document.getElementById("transport").value) || 0;
+      const total = (electricity * 0.5) + (transport * 0.21);
+      document.getElementById("result").innerText = `Estimated monthly CO₂ footprint: ${total.toFixed(2)} kg`;
+    }
+  </script>
+
+</body>
+</html>

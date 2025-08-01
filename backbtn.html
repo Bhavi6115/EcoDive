@@ -1,0 +1,23 @@
+<button onclick="goBack()" class="back-btn">← Back</button>
+
+<style>
+  .back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    padding: 8px 14px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+</style>
+
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>

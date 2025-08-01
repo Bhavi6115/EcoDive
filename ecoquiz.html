@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eco Quiz - EcoDive</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('images/quiz-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(14, 22, 29, 0.75);
+      padding: 25px;
+      border-radius: 15px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 32px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+      font-size: 18px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .correct {
+      background-color: #27ae60;
+    }
+    .incorrect {
+      background-color: #c0392b;
+    }
+    .correct-answer {
+      border: 1px dashed #27ae60;
+      padding-left: 10px;
+      margin-top: 5px;
+    }
+    button {
+      background-color: #00b894;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto 10px auto;
+    }
+    button:hover {
+      background-color: #019875;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+       footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<a href="index.html" class="back-btn">← Back</a>
+
+<style>
+  .back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s;
+  }
+
+  .back-btn:hover {
+    background-color: #388E3C;
+  }
+</style>
+
+  <div class="container">
+    <h2>Eco Quiz</h2>
+    <form id="quizForm">
+      
+      <div class="question" data-answer="c">
+        <p>1. What is the main cause of global warming?</p>
+        <label><input type="radio" name="q1" value="a"> Deforestation</label>
+        <label><input type="radio" name="q1" value="b"> Plastic Waste</label>
+        <label><input type="radio" name="q1" value="c"> Greenhouse Gases</label>
+      </div>
+
+      <div class="question" data-answer="c">
+        <p>2. Which gas do trees absorb?</p>
+        <label><input type="radio" name="q2" value="a"> Oxygen</label>
+        <label><input type="radio" name="q2" value="b"> Nitrogen</label>
+        <label><input type="radio" name="q2" value="c"> Carbon Dioxide</label>
+      </div>
+
+      <div class="question" data-answer="b">
+        <p>3. Which is a renewable source of energy?</p>
+        <label><input type="radio" name="q3" value="a"> Coal</label>
+        <label><input type="radio" name="q3" value="b"> Solar</label>
+        <label><input type="radio" name="q3" value="c"> Natural Gas</label>
+      </div>
+
+      <div class="question" data-answer="b">
+        <p>4. What percentage of Earth’s surface is covered by water?</p>
+        <label><input type="radio" name="q4" value="a"> 50%</label>
+        <label><input type="radio" name="q4" value="b"> 70%</label>
+        <label><input type="radio" name="q4" value="c"> 85%</label>
+      </div>
+
+      <div class="question" data-answer="b">
+        <p>5. Which of the following is biodegradable?</p>
+        <label><input type="radio" name="q5" value="a"> Plastic bottle</label>
+        <label><input type="radio" name="q5" value="b"> Banana peel</label>
+        <label><input type="radio" name="q5" value="c"> Aluminum can</label>
+      </div>
+
+      <button type="button" onclick="calculateScore()">Submit Quiz</button>
+      <div id="result"></div>
+    </form>
+  </div>
+
+  <script>
+    function calculateScore() {
+      const questions = document.querySelectorAll(".question");
+      let score = 0;
+
+      questions.forEach((question, index) => {
+        const qNum = index + 1;
+        const correctAnswer = question.dataset.answer;
+        const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+
+        const labels = question.querySelectorAll("label");
+        labels.forEach(label => {
+          label.classList.remove("correct", "incorrect");
+        });
+
+        if (selected) {
+          const selectedLabel = selected.closest("label");
+
+          if (selected.value === correctAnswer) {
+            selectedLabel.classList.add("correct");
+            score++;
+          } else {
+            selectedLabel.classList.add("incorrect");
+            // Show the correct one
+            const correctInput = question.querySelector(`input[value="${correctAnswer}"]`);
+            if (correctInput) {
+              correctInput.closest("label").classList.add("correct-answer");
+            }
+          }
+        } else {
+          // Show the correct one even if user left it blank
+          const correctInput = question.querySelector(`input[value="${correctAnswer}"]`);
+          if (correctInput) {
+            correctInput.closest("label").classList.add("correct-answer");
+          }
+        }
+      });
+
+      document.getElementById("result").innerText = `You got ${score} out of ${questions.length} correct!`;
+    }
+  </script>
+  
+  <footer>
+    &copy; 2025 EcoDive | Dive into Nature’s Balance
+  </footer>
+
+
+</body>
+</html>
