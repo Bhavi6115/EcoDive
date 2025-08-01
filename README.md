@@ -15,6 +15,7 @@ EcoDive is a responsive environmental awareness website designed to inform and i
 
 - HTML
 - CSS
+- JS
 
 ## 🌍 Live Site
 
